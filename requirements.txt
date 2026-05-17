@@ -1,0 +1,74 @@
+# Text-to-SQL 数据智能分析平台 - 依赖库总览
+
+本项目包含两种 Text-to-SQL 实现方案，请根据需要使用对应的依赖库。
+
+---
+
+## LangChain 方案依赖库
+
+用于运行 `Case-SQL-LangChain/langchain_web.py`
+
+```
+langchain==0.3.25
+langchain-community==0.3.25
+langchain-openai==0.3.25
+openai==1.77.0
+pandas==2.2.3
+flask==3.1.0
+```
+
+**安装命令：**
+```bash
+cd "Case-SQL-LangChain"
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple langchain==0.3.25 langchain-community==0.3.25 langchain-openai==0.3.25 openai==1.77.0 pandas==2.2.3 flask==3.1.0
+```
+
+---
+
+## Vanna 方案依赖库
+
+用于运行 `CASE-SQL-vanna/vanna-mysql-full.py`
+
+```
+vanna==0.7.9
+openai==1.77.0
+flask==3.1.0
+pandas==2.2.3
+```
+
+**安装命令：**
+```bash
+cd "CASE-SQL-vanna"
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple vanna==0.7.9 openai==1.77.0 flask==3.1.0 pandas==2.2.3
+```
+
+---
+
+## 依赖库说明
+
+| 依赖库 | LangChain | Vanna | 说明 |
+|--------|:---------:|:-----:|------|
+| langchain | ✅ | ❌ | LangChain 核心框架 |
+| langchain-community | ✅ | ❌ | LangChain 社区工具包（含 SQLDatabase） |
+| langchain-openai | ✅ | ❌ | LangChain OpenAI 集成 |
+| vanna | ❌ | ✅ | Vanna AI 框架 |
+| openai | ✅ | ✅ | OpenAI Python SDK（用于调用通义千问） |
+| flask | ✅ | ✅ | Web 框架 |
+| pandas | ✅ | ✅ | 数据处理与 DataFrame |
+
+---
+
+## 一次性安装所有依赖
+
+如果你想同时支持两种方案，可以一次性安装：
+
+```bash
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \
+  langchain==0.3.25 \
+  langchain-community==0.3.25 \
+  langchain-openai==0.3.25 \
+  vanna==0.7.9 \
+  openai==1.77.0 \
+  flask==3.1.0 \
+  pandas==2.2.3
+```
